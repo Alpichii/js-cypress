@@ -55,3 +55,23 @@ console.log(language.slice(4)); // Script
 
 console.log(language.slice(-4, -2)); // ri
 console.log(language.substring(-4, -2)); // empty
+
+let strSplit1 = "Java".split(""); // ['J', 'a', 'v', 'a']
+console.log(strSplit1);
+console.log(strSplit1.length); // 4
+
+let strSplit2 = 'Not Java but JavaScript'.split(' ');
+console.log(strSplit2); // [ 'Not', 'Java', 'but', 'JavaScript' ]
+console.log(strSplit2.length); // 4
+
+console.log("Java or JavaScript".replace("Java", "####")); // #### or JavaScript
+console.log("Java or JavaScript".replaceAll("Java", "####")); // #### or ####Script
+
+console.log("Java or JavaScript".replace("ABC", "####")); // Java or JavaScript
+console.log("Java or JavaScript".replaceAll("ABC", "####")); // Java or JavaScript
+
+let id1 = "1", id2 = "123"; // 000001, 000123
+console.log(id1.padStart(6, "0"));
+console.log(id2.padEnd(6, "0"));
+
+
