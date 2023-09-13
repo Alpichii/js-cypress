@@ -74,3 +74,64 @@ console.log(arr); // [ 'Pencil', 'Eraser', 'Phone', 'Pen', 'Eraser', 'Phone' ]
 
 arr.splice(3, 3);
 console.log(arr); // [ 'Pencil', 'Eraser', 'Phone' ]
+
+
+const favNumbers = [ 7, 5, 8, 10, 15, 10 ];
+console.log(favNumbers.indexOf(10)); // 3
+console.log(favNumbers.lastIndexOf(10)); // 5
+
+console.log(favNumbers.includes(5)); // true
+console.log(favNumbers.includes(15)); // true
+console.log(favNumbers.includes(50)); // false
+console.log(favNumbers.includes(100)); // false
+
+console.log([ 'abc', 'FOO', 'bar', 123, true ].includes('ABC')); // false
+console.log([ 'abc', 'FOO', 'bar', 123, true ].indexOf('ABC')); // -1
+console.log([ 'abc', 'FOO', 'bar', 123, true ].lastIndexOf('ABC')); // -1
+
+
+const newArr = [ 1, 5, -3, 100];
+const newArrReversed = newArr;
+newArrReversed.reverse();
+
+console.log(newArr); // [ 1, 5, -3, 100]
+console.log(newArrReversed); // [ 100, -3, 5, 1 ]
+
+
+// Multi-dimentional array
+const multi = [
+    ['Phone', 'Computer'],
+    ['Cup', 'Fork', 'Spoon', 'Plate'],
+    ['Mouse']
+];
+
+console.log(multi[1][2]); // Spoon
+
+
+for(const arr of multi){
+    console.log('The inner array', arr);
+    for(const obj of arr){
+        console.log('\tElement', obj)
+    }
+}
+
+// Count all the element starting with P -> 2
+const multiFlat = multi.flat();
+console.log(multiFlat);
+console.log(multiFlat.length); // 7
+
+let count = 0;
+for(const element of multiFlat){
+    if(element.startsWith('P')) count++;
+}
+
+console.log(count); // 2
+
+
+const lastArray = [5, 10, 20, 43];
+
+console.log(lastArray.toString()); // 5,10,20,43
+console.log(lastArray.join()); // 5,10,20,43
+console.log(lastArray.join(" | ")); // 5 | 10 | 20 | 43
+console.log(lastArray.join(" - ")); // 5 - 10 - 20 - 43
+console.log(lastArray.join(" ### ")); // 5 ### 10 ### 20 ### 43
