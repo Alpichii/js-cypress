@@ -57,3 +57,29 @@ const books = [
 ];
 
 // Count the books where Author first name has an 'a' -> 2
+
+// 1 - using loop
+let countA = 0;
+for(const book of books) {
+    if(book.author.fname.toLowerCase().indexOf('a') !== -1) countA++;
+}
+console.log(countA);
+
+// 2 - filter
+// const booksAuthorWithA = books.filter((book) => book.author.fname.toLowerCase().indexOf('a') !== -1);
+// console.log(booksAuthorWithA);
+// console.log(booksAuthorWithA.length); // 2
+
+console.log(books.filter((book) => book.author.fname.toLowerCase().indexOf('a') !== -1).length); // 2
+
+const result = books.reduce((count, book) => {
+    if(book.author.fname.toLowerCase().indexOf('a') !== -1) return count+1;
+    return count;
+}, 0);
+
+console.log(result); // 2
+
+console.log(books.reduce((count, book) => {
+    if(book.author.fname.toLowerCase().indexOf('a') !== -1) return count+1;
+    return count;
+}, 0)); // 2
